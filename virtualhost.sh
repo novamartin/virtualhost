@@ -94,7 +94,7 @@ if [ "$action" == 'create' ]
 		fi
 
 		### Add domain in /etc/hosts
-		if ! echo "\n127.0.0.1	$domain" >> /etc/hosts
+		if ! echo -e "\n127.0.0.1	$domain" >> /etc/hosts
 		then
 			echo $"ERROR: Not able to write in /etc/hosts"
 			exit;
