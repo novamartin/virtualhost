@@ -12,6 +12,10 @@ sitesEnable='/etc/apache2/sites-enabled/'
 sitesAvailable='/etc/apache2/sites-available/'
 userDir='/var/www/'
 sitesAvailabledomain=$sitesAvailable$domain.conf
+### change default port in virtualhost setting
+port='9091'
+
+
 
 ### don't modify from here unless you know what you are doing ####
 
@@ -69,7 +73,7 @@ if [ "$action" == 'create' ]
 
 		### create virtual host rules file
 		if ! echo "
-		<VirtualHost *:80>
+		<VirtualHost *:$port>
 			ServerAdmin $email
 			ServerName $domain
 			ServerAlias $domain
